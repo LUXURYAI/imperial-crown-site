@@ -1,136 +1,561 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Imperial Crown Armenian Lavash</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Imperial Crown Armenian Lavash</title>
+  <meta name="description" content="Premium yeast-free Armenian lavash produced in Sharjah and delivered across the UAE." />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-<style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f2e8;
+      color: #2f241c;
+      line-height: 1.6;
+    }
 
-body{
-margin:0;
-font-family:Arial;
-background:#f7f3ea;
-color:#333;
-}
+    a {
+      text-decoration: none;
+    }
 
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 60px;
-background:white;
-border-bottom:1px solid #eee;
-}
+    header {
+      background: #fffaf2;
+      border-bottom: 1px solid #e7dcc8;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-.logo{
-font-size:28px;
-font-weight:bold;
-color:#5a3a1a;
-}
+    .topbar {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 22px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-nav a{
-margin-left:25px;
-text-decoration:none;
-color:#333;
-font-weight:bold;
-}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
 
-.hero{
-text-align:center;
-padding:120px 20px;
-background:#f2e7d5;
-}
+    .brand img {
+      width: 78px;
+      height: 78px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: transparent;
+    }
 
-.hero h1{
-font-size:48px;
-margin-bottom:20px;
-color:#5a3a1a;
-}
+    .brand-text h1 {
+      margin: 0;
+      font-size: 20px;
+      color: #5a381c;
+      line-height: 1.1;
+    }
 
-.hero p{
-font-size:20px;
-max-width:700px;
-margin:auto;
-}
+    .brand-text p {
+      margin: 4px 0 0;
+      font-size: 14px;
+      color: #9a7848;
+      letter-spacing: 0.5px;
+    }
 
-.button{
-display:inline-block;
-margin-top:30px;
-padding:15px 35px;
-background:#caa45a;
-color:white;
-text-decoration:none;
-font-weight:bold;
-border-radius:4px;
-}
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 26px;
+    }
 
-.section{
-padding:80px 20px;
-text-align:center;
-max-width:1000px;
-margin:auto;
-}
+    nav a {
+      color: #3f2d1c;
+      font-weight: 700;
+      font-size: 16px;
+    }
 
-footer{
-background:#5a3a1a;
-color:white;
-padding:40px;
-text-align:center;
-}
+    nav a:hover {
+      color: #b1843f;
+    }
 
-</style>
+    .hero {
+      background: linear-gradient(rgba(248, 241, 228, 0.88), rgba(248, 241, 228, 0.9)),
+        url('lavash.jpg') center/cover no-repeat;
+      min-height: 640px;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 24px;
+      width: 100%;
+    }
+
+    .hero-box {
+      max-width: 760px;
+      background: rgba(255, 251, 243, 0.78);
+      backdrop-filter: blur(2px);
+      border: 1px solid rgba(177, 132, 63, 0.18);
+      border-radius: 18px;
+      padding: 42px 38px;
+      box-shadow: 0 12px 35px rgba(73, 47, 23, 0.08);
+    }
+
+    .eyebrow {
+      color: #b1843f;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .hero h2 {
+      margin: 0 0 18px;
+      font-size: 58px;
+      line-height: 1.05;
+      color: #5a381c;
+    }
+
+    .hero p {
+      margin: 0;
+      font-size: 22px;
+      color: #453328;
+      max-width: 680px;
+    }
+
+    .hero-points {
+      margin: 28px 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .hero-points span {
+      background: #fff;
+      border: 1px solid #ead9bc;
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #6b4b2a;
+    }
+
+    .hero-buttons {
+      margin-top: 34px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 26px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 16px;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #c79b52;
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #b4863f;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #5a381c;
+      border: 2px solid #b1843f;
+    }
+
+    .btn-secondary:hover {
+      background: #f2e2c5;
+    }
+
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 90px 24px;
+    }
+
+    .section-title {
+      font-size: 42px;
+      color: #5a381c;
+      margin: 0 0 16px;
+      text-align: center;
+    }
+
+    .section-subtitle {
+      max-width: 780px;
+      margin: 0 auto 48px;
+      text-align: center;
+      font-size: 19px;
+      color: #5f4a39;
+    }
+
+    .about-grid,
+    .products-grid,
+    .value-grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .about-grid {
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+    }
+
+    .about-card,
+    .product-card,
+    .value-card,
+    .partnership-box,
+    .contact-box {
+      background: #fffaf2;
+      border: 1px solid #eadcc7;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(80, 55, 27, 0.06);
+    }
+
+    .about-card {
+      padding: 34px;
+    }
+
+    .about-card h3 {
+      margin-top: 0;
+      color: #5a381c;
+      font-size: 30px;
+    }
+
+    .about-card p {
+      font-size: 18px;
+      color: #4d3d31;
+      margin-bottom: 0;
+    }
+
+    .about-image {
+      min-height: 360px;
+      border-radius: 18px;
+      background: linear-gradient(rgba(247, 242, 232, 0.08), rgba(247, 242, 232, 0.08)),
+        url('lavash.jpg') center/cover no-repeat;
+      border: 1px solid #eadcc7;
+      box-shadow: 0 8px 24px rgba(80, 55, 27, 0.06);
+    }
+
+    .value-grid {
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 24px;
+    }
+
+    .value-card {
+      padding: 24px;
+      text-align: center;
+    }
+
+    .value-card h4 {
+      margin: 0 0 10px;
+      color: #5a381c;
+      font-size: 22px;
+    }
+
+    .value-card p {
+      margin: 0;
+      color: #5d4b3d;
+      font-size: 16px;
+    }
+
+    .products-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .product-card {
+      padding: 28px;
+    }
+
+    .product-card h3 {
+      margin: 0 0 12px;
+      color: #5a381c;
+      font-size: 24px;
+    }
+
+    .product-card p {
+      margin: 0;
+      color: #5d4b3d;
+      font-size: 17px;
+    }
+
+    .partnership-wrap {
+      background: #efe2cb;
+      padding: 90px 24px;
+    }
+
+    .partnership-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .partnership-box {
+      padding: 42px;
+      text-align: center;
+    }
+
+    .partnership-box h3 {
+      margin: 0 0 14px;
+      font-size: 40px;
+      color: #5a381c;
+    }
+
+    .partnership-box p {
+      max-width: 860px;
+      margin: 0 auto 26px;
+      font-size: 19px;
+      color: #4f3d30;
+    }
+
+    .contact {
+      padding-top: 80px;
+    }
+
+    .contact-box {
+      padding: 34px;
+      text-align: center;
+    }
+
+    .contact-box p {
+      font-size: 18px;
+      margin: 10px 0;
+      color: #4f3d30;
+    }
+
+    footer {
+      margin-top: 80px;
+      background: #4a2d16;
+      color: #fff6ea;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 34px 24px;
+      text-align: center;
+    }
+
+    .footer-inner p {
+      margin: 8px 0;
+      font-size: 17px;
+    }
+
+    @media (max-width: 992px) {
+      .about-grid,
+      .products-grid,
+      .value-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h2 {
+        font-size: 42px;
+      }
+
+      .hero p {
+        font-size: 19px;
+      }
+
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .brand {
+        align-items: flex-start;
+      }
+
+      .brand img {
+        width: 64px;
+        height: 64px;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-box {
+        padding: 28px 22px;
+      }
+
+      .hero h2 {
+        font-size: 34px;
+      }
+
+      .section-title {
+        font-size: 32px;
+      }
+
+      .partnership-box h3 {
+        font-size: 30px;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<header>
+  <header>
+    <div class="topbar">
+      <div class="brand">
+        <img src="logo.png" alt="Imperial Crown Armenian Lavash logo">
+        <div class="brand-text">
+          <h1>Imperial Crown</h1>
+          <p>Armenian Lavash</p>
+        </div>
+      </div>
 
-<div class="logo">
-Imperial Crown<br>
-Armenian Lavash
-</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html">Our Products</a>
+        <a href="wholesale.html">Wholesale</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-<nav>
-<a href="#">Home</a>
-<a href="#">About</a>
-<a href="#">Our Products</a>
-<a href="#">Wholesale</a>
-<a href="#">Contact</a>
-</nav>
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-box">
+        <div class="eyebrow">Traditional Bakery • Premium Quality</div>
+        <h2>Authentic Armenian Lavash</h2>
+        <p>
+          Premium yeast-free Armenian lavash crafted with high quality flour and pure Armenian water.
+          Produced in Sharjah and delivered across all Emirates.
+        </p>
 
-</header>
+        <div class="hero-points">
+          <span>Yeast-Free</span>
+          <span>Premium Flour</span>
+          <span>Pure Armenian Water</span>
+          <span>Delivery Across UAE</span>
+        </div>
 
-<section class="hero">
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="https://wa.me/971588588313" target="_blank">Request Wholesale Price</a>
+          <a class="btn btn-secondary" href="contact.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<h1>Authentic Armenian Lavash</h1>
+  <section class="section">
+    <h2 class="section-title">About Imperial Crown</h2>
+    <p class="section-subtitle">
+      A premium bakery brand proudly bringing the authentic taste of Armenian baking tradition to the UAE.
+    </p>
 
-<p>
-Premium yeast-free Armenian lavash crafted with high quality flour and pure Armenian water.  
-Produced in Sharjah and delivered across all Emirates.
-</p>
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>Traditional bakery heritage with luxury presentation</h3>
+        <p>
+          Imperial Crown is created to represent Armenian bakery culture in the UAE at the highest level.
+          We focus on authenticity, quality, careful production, elegant presentation and long-term trust.
+          Our goal is not to be an ordinary bakery, but a premium bakery brand where every detail matters.
+        </p>
+      </div>
+      <div class="about-image"></div>
+    </div>
 
-<a class="button">Request Wholesale Price</a>
+    <div class="value-grid">
+      <div class="value-card">
+        <h4>Authentic Recipe</h4>
+        <p>Traditional Armenian lavash made with care and respect for heritage.</p>
+      </div>
+      <div class="value-card">
+        <h4>Premium Quality</h4>
+        <p>Selected ingredients, controlled production and consistent standards.</p>
+      </div>
+      <div class="value-card">
+        <h4>Sharjah Production</h4>
+        <p>Fresh production in the UAE with reliable delivery across all Emirates.</p>
+      </div>
+      <div class="value-card">
+        <h4>Future Growth</h4>
+        <p>Lavash today, with more premium bakery products to be added later.</p>
+      </div>
+    </div>
+  </section>
 
-</section>
+  <section class="section">
+    <h2 class="section-title">Our Products</h2>
+    <p class="section-subtitle">
+      We begin with our signature Armenian lavash and will gradually expand our assortment with carefully selected bakery products.
+    </p>
 
-<section class="section">
+    <div class="products-grid">
+      <div class="product-card">
+        <h3>Armenian Lavash</h3>
+        <p>Traditional thin lavash with authentic taste, delicate texture and yeast-free recipe.</p>
+      </div>
+      <div class="product-card">
+        <h3>Bakery ассортимент</h3>
+        <p>Additional premium bakery products will be introduced as the brand grows.</p>
+      </div>
+      <div class="product-card">
+        <h3>Retail & Wholesale</h3>
+        <p>Flexible supply for supermarkets, restaurants, hotels and food service partners.</p>
+      </div>
+    </div>
+  </section>
 
-<h2>Our Products</h2>
+  <section class="partnership-wrap">
+    <div class="partnership-inner">
+      <div class="partnership-box">
+        <h3>Partnership Opportunities</h3>
+        <p>
+          Imperial Crown welcomes cooperation with restaurants, hotels, supermarkets, distributors and catering companies across the UAE.
+          We offer reliable supply, premium quality products and long-term partnership potential.
+        </p>
+        <a class="btn btn-primary" href="https://wa.me/971588588313" target="_blank">Become Our Partner</a>
+      </div>
+    </div>
+  </section>
 
-<p>
-Imperial Crown produces premium Armenian lavash and in the future will offer a wider range of high-quality bakery products.
-</p>
+  <section class="section contact">
+    <h2 class="section-title">Contact Us</h2>
+    <div class="contact-box">
+      <p><strong>Production:</strong> Sharjah, UAE</p>
+      <p><strong>Delivery:</strong> Across All Emirates</p>
+      <p><strong>Email:</strong> info@imperial-crown.com</p>
+      <p><strong>WhatsApp:</strong> +971 58 858 8313</p>
+    </div>
+  </section>
 
-</section>
-
-<footer>
-
-Imperial Crown Armenian Lavash<br>
-Production: Sharjah UAE<br>
-Delivery Across All Emirates
-
-</footer>
+  <footer>
+    <div class="footer-inner">
+      <p><strong>Imperial Crown Armenian Lavash</strong></p>
+      <p>Premium bakery brand inspired by Armenian tradition</p>
+      <p>Production: Sharjah UAE • Delivery Across All Emirates</p>
+    </div>
+  </footer>
 
 </body>
 </html>

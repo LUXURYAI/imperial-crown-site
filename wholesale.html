@@ -101,24 +101,33 @@
       border:1px solid #ead9bc;
       border-radius:999px;
       padding:6px;
+      flex-wrap:wrap;
     }
 
-    .language-switcher a{
-      padding:8px 14px;
+    .language-switcher button{
+      border:none;
+      background:transparent;
+      padding:8px 12px;
       border-radius:999px;
       font-size:13px;
       font-weight:700;
       color:#5a381c;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      white-space:nowrap;
       transition:0.2s ease;
     }
 
-    .language-switcher a:hover{
-      background:#f0dfc2;
-    }
-
-    .language-switcher .active{
+    .language-switcher button.active{
       background:#c79b52;
       color:#fff;
+    }
+
+    .flag{
+      font-size:16px;
+      line-height:1;
     }
 
     .hero{
@@ -435,6 +444,43 @@
       transform:scale(1.1);
     }
 
+    html[dir="rtl"] body{
+      direction:rtl;
+      text-align:right;
+    }
+
+    html[dir="rtl"] .topbar{
+      direction:rtl;
+    }
+
+    html[dir="rtl"] .brand{
+      flex-direction:row-reverse;
+    }
+
+    html[dir="rtl"] .header-right{
+      justify-content:flex-start;
+    }
+
+    html[dir="rtl"] nav{
+      flex-direction:row-reverse;
+    }
+
+    html[dir="rtl"] .hero-buttons,
+    html[dir="rtl"] .footer-socials{
+      flex-direction:row-reverse;
+    }
+
+    html[dir="rtl"] .section-title,
+    html[dir="rtl"] .section-subtitle,
+    html[dir="rtl"] .partnership-box,
+    html[dir="rtl"] .contact-box,
+    html[dir="rtl"] .footer-inner,
+    html[dir="rtl"] .form-box h3,
+    html[dir="rtl"] .form-box p,
+    html[dir="rtl"] .form-actions{
+      text-align:center;
+    }
+
     @media (max-width: 992px){
       .supply-grid,
       .benefits-grid,
@@ -499,6 +545,15 @@
         gap:10px;
       }
 
+      .language-switcher{
+        width:100%;
+      }
+
+      .language-switcher button{
+        font-size:12px;
+        padding:8px 10px;
+      }
+
       .whatsapp-button{
         width:56px;
         height:56px;
@@ -516,23 +571,32 @@
         <img src="logo.png" alt="Imperial Crown Armenian Lavash logo">
         <div class="brand-text">
           <h1>Imperial Crown</h1>
-          <p>Armenian Lavash</p>
+          <p data-i18n="brand_sub">Armenian Lavash</p>
         </div>
       </div>
 
       <div class="header-right">
         <nav>
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="products.html">Our Products</a>
-          <a href="wholesale.html">Wholesale</a>
-          <a href="contact.html">Contact</a>
+          <a href="index.html" data-i18n="nav_home">Home</a>
+          <a href="about.html" data-i18n="nav_about">About</a>
+          <a href="products.html" data-i18n="nav_products">Our Products</a>
+          <a href="wholesale.html" data-i18n="nav_wholesale">Wholesale</a>
+          <a href="contact.html" data-i18n="nav_contact">Contact</a>
         </nav>
 
         <div class="language-switcher">
-          <a href="wholesale.html" class="active">EN</a>
-          <a href="ru/index.html">RU</a>
-          <a href="ar/index.html">AR</a>
+          <button type="button" data-lang="en" class="active">
+            <span class="flag">🇬🇧</span><span>English</span>
+          </button>
+          <button type="button" data-lang="ru">
+            <span class="flag">🇷🇺</span><span>Русский</span>
+          </button>
+          <button type="button" data-lang="hy">
+            <span class="flag">🇦🇲</span><span>Հայերեն</span>
+          </button>
+          <button type="button" data-lang="ar">
+            <span class="flag">🇦🇪</span><span>العربية</span>
+          </button>
         </div>
       </div>
     </div>
@@ -541,62 +605,62 @@
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-box">
-        <div class="eyebrow">Wholesale Supply • Partnership Opportunities</div>
-        <h2>Reliable Lavash Supply Across the UAE</h2>
-        <p>
+        <div class="eyebrow" data-i18n="eyebrow">Wholesale Supply • Partnership Opportunities</div>
+        <h2 data-i18n="hero_title">Reliable Lavash Supply Across the UAE</h2>
+        <p data-i18n="hero_text">
           Imperial Crown offers premium yeast-free Armenian lavash for restaurants, hotels,
           supermarkets, distributors and catering companies throughout the Emirates.
         </p>
 
         <div class="hero-buttons">
-          <a class="btn btn-primary" href="#request-form">Request Wholesale Price</a>
-          <a class="btn btn-secondary" href="https://wa.me/971588588313" target="_blank">WhatsApp Us</a>
+          <a class="btn btn-primary" href="#request-form" data-i18n="hero_btn_1">Request Wholesale Price</a>
+          <a class="btn btn-secondary" href="https://wa.me/971588588313" target="_blank" data-i18n="hero_btn_2">WhatsApp Us</a>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section">
-    <h2 class="section-title">Who We Supply</h2>
-    <p class="section-subtitle">
+    <h2 class="section-title" data-i18n="supply_title">Who We Supply</h2>
+    <p class="section-subtitle" data-i18n="supply_subtitle">
       We are open to long-term cooperation with food service and retail partners who value reliable supply,
       premium quality and authentic Armenian bakery tradition.
     </p>
 
     <div class="supply-grid">
       <div class="card">
-        <h3>Restaurants</h3>
-        <p>Consistent lavash supply for shawarma restaurants, Arabic cuisine, Armenian cuisine and premium dining concepts.</p>
+        <h3 data-i18n="supply_1_title">Restaurants</h3>
+        <p data-i18n="supply_1_text">Consistent lavash supply for shawarma restaurants, Arabic cuisine, Armenian cuisine and premium dining concepts.</p>
       </div>
       <div class="card">
-        <h3>Hotels</h3>
-        <p>Fresh premium bakery products for hotel kitchens, breakfast service, events and guest dining operations.</p>
+        <h3 data-i18n="supply_2_title">Hotels</h3>
+        <p data-i18n="supply_2_text">Fresh premium bakery products for hotel kitchens, breakfast service, events and guest dining operations.</p>
       </div>
       <div class="card">
-        <h3>Supermarkets</h3>
-        <p>Retail-ready bakery products with strong presentation and the potential for long-term shelf presence.</p>
+        <h3 data-i18n="supply_3_title">Supermarkets</h3>
+        <p data-i18n="supply_3_text">Retail-ready bakery products with strong presentation and the potential for long-term shelf presence.</p>
       </div>
     </div>
   </section>
 
   <section class="section">
-    <h2 class="section-title">Why Work With Imperial Crown</h2>
-    <p class="section-subtitle">
+    <h2 class="section-title" data-i18n="benefits_title">Why Work With Imperial Crown</h2>
+    <p class="section-subtitle" data-i18n="benefits_subtitle">
       We combine authentic Armenian bakery heritage with premium quality standards and a modern production approach in the UAE.
     </p>
 
     <div class="benefits-grid">
       <div class="card">
-        <h3>Authentic Taste</h3>
-        <p>Traditional Armenian lavash with a recipe focused on authenticity, texture and quality.</p>
+        <h3 data-i18n="benefit_1_title">Authentic Taste</h3>
+        <p data-i18n="benefit_1_text">Traditional Armenian lavash with a recipe focused on authenticity, texture and quality.</p>
       </div>
       <div class="card">
-        <h3>Reliable Production</h3>
-        <p>Fresh production in Sharjah with consistent standards and dependable delivery across all Emirates.</p>
+        <h3 data-i18n="benefit_2_title">Reliable Production</h3>
+        <p data-i18n="benefit_2_text">Fresh production in Sharjah with consistent standards and dependable delivery across all Emirates.</p>
       </div>
       <div class="card">
-        <h3>Long-Term Partnership</h3>
-        <p>Flexible cooperation for wholesalers, retailers and food service companies looking for stable supply.</p>
+        <h3 data-i18n="benefit_3_title">Long-Term Partnership</h3>
+        <p data-i18n="benefit_3_text">Flexible cooperation for wholesalers, retailers and food service companies looking for stable supply.</p>
       </div>
     </div>
   </section>
@@ -604,20 +668,20 @@
   <section class="partnership-wrap">
     <div class="partnership-inner">
       <div class="partnership-box">
-        <h3>Partnership Opportunities</h3>
-        <p>
+        <h3 data-i18n="partner_title">Partnership Opportunities</h3>
+        <p data-i18n="partner_text">
           Imperial Crown welcomes cooperation with restaurants, hotels, supermarkets, distributors and catering companies across the UAE.
           We offer reliable supply, premium product quality and long-term partnership opportunities.
         </p>
-        <a class="btn btn-primary" href="contact.html">Become Our Partner</a>
+        <a class="btn btn-primary" href="contact.html" data-i18n="partner_btn">Become Our Partner</a>
       </div>
     </div>
   </section>
 
   <section class="section" id="request-form">
     <div class="form-box">
-      <h3>Request Wholesale Price</h3>
-      <p>
+      <h3 data-i18n="form_title">Request Wholesale Price</h3>
+      <p data-i18n="form_subtitle">
         Send us your request and our team will contact you regarding pricing, supply terms and partnership opportunities.
       </p>
 
@@ -626,66 +690,66 @@
 
         <div class="form-grid">
           <div>
-            <label for="fullname">Full Name</label>
+            <label for="fullname" data-i18n="label_fullname">Full Name</label>
             <input type="text" id="fullname" name="fullname" placeholder="Your full name" required>
           </div>
 
           <div>
-            <label for="company">Company Name</label>
+            <label for="company" data-i18n="label_company">Company Name</label>
             <input type="text" id="company" name="company" placeholder="Your company name">
           </div>
 
           <div>
-            <label for="phone">Phone / WhatsApp</label>
+            <label for="phone" data-i18n="label_phone">Phone / WhatsApp</label>
             <input type="text" id="phone" name="phone" placeholder="+971..." required>
           </div>
 
           <div>
-            <label for="email">Email</label>
+            <label for="email" data-i18n="label_email">Email</label>
             <input type="email" id="email" name="email" placeholder="your@email.com" required>
           </div>
 
           <div>
-            <label for="city">City / Emirate</label>
+            <label for="city" data-i18n="label_city">City / Emirate</label>
             <input type="text" id="city" name="city" placeholder="Dubai, Sharjah, Abu Dhabi...">
           </div>
 
           <div>
-            <label for="business">Business Type</label>
+            <label for="business" data-i18n="label_business">Business Type</label>
             <select id="business" name="business">
-              <option value="">Select business type</option>
-              <option>Restaurant</option>
-              <option>Hotel</option>
-              <option>Supermarket</option>
-              <option>Distributor</option>
-              <option>Catering Company</option>
-              <option>Other</option>
+              <option value="" data-i18n="option_select">Select business type</option>
+              <option data-i18n="option_restaurant">Restaurant</option>
+              <option data-i18n="option_hotel">Hotel</option>
+              <option data-i18n="option_supermarket">Supermarket</option>
+              <option data-i18n="option_distributor">Distributor</option>
+              <option data-i18n="option_catering">Catering Company</option>
+              <option data-i18n="option_other">Other</option>
             </select>
           </div>
 
           <div class="full">
-            <label for="volume">Estimated Order Volume</label>
+            <label for="volume" data-i18n="label_volume">Estimated Order Volume</label>
             <input type="text" id="volume" name="volume" placeholder="Example: weekly / monthly quantity">
           </div>
 
           <div class="full">
-            <label for="message">Message</label>
+            <label for="message" data-i18n="label_message">Message</label>
             <textarea id="message" name="message" placeholder="Tell us about your request"></textarea>
           </div>
         </div>
 
         <div class="form-actions">
-          <button type="submit" class="btn btn-primary">Send Request</button>
+          <button type="submit" class="btn btn-primary" data-i18n="form_btn">Send Request</button>
         </div>
       </form>
     </div>
   </section>
 
   <section class="section">
-    <h2 class="section-title">Contact Information</h2>
+    <h2 class="section-title" data-i18n="contact_title">Contact Information</h2>
     <div class="contact-box">
-      <p><strong>Production:</strong> Sharjah, UAE</p>
-      <p><strong>Delivery:</strong> Across All Emirates</p>
+      <p><strong data-i18n="contact_prod_label">Production:</strong> <span data-i18n="contact_prod_value">Sharjah, UAE</span></p>
+      <p><strong data-i18n="contact_delivery_label">Delivery:</strong> <span data-i18n="contact_delivery_value">Across All Emirates</span></p>
       <p><strong>Email:</strong> info@imperial-crown.com</p>
       <p><strong>WhatsApp:</strong> +971 58 858 8313</p>
     </div>
@@ -694,8 +758,8 @@
   <footer>
     <div class="footer-inner">
       <p><strong>Imperial Crown Armenian Lavash</strong></p>
-      <p>Premium bakery brand inspired by Armenian tradition</p>
-      <p>Production: Sharjah UAE • Delivery Across All Emirates</p>
+      <p data-i18n="footer_tagline">Premium bakery brand inspired by Armenian tradition</p>
+      <p data-i18n="footer_line">Production: Sharjah UAE • Delivery Across All Emirates</p>
 
       <div class="footer-socials">
         <a href="https://www.instagram.com/armenyan_lavash?igsh=NW1lZHNvb214OXdw" target="_blank">Instagram</a>
@@ -711,6 +775,319 @@
       <path d="M19.11 17.44c-.29-.14-1.69-.83-1.95-.93-.26-.1-.45-.14-.64.14-.19.29-.74.93-.91 1.12-.17.19-.33.21-.62.07-.29-.14-1.23-.45-2.34-1.44-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.12-.59.12-.12.29-.31.43-.46.14-.14.19-.24.29-.4.1-.17.05-.31-.02-.45-.07-.14-.64-1.54-.88-2.11-.23-.56-.47-.49-.64-.5h-.55c-.19 0-.5.07-.76.36-.26.29-1 1-1 2.44 0 1.43 1.03 2.81 1.18 3 .14.19 2.03 3.09 4.92 4.34.69.3 1.23.48 1.65.61.69.22 1.31.19 1.8.11.55-.08 1.69-.69 1.93-1.35.24-.66.24-1.23.17-1.35-.07-.12-.26-.19-.55-.33z"/>
     </svg>
   </a>
+
+  <script>
+    const translations = {
+      en: {
+        brand_sub: "Armenian Lavash",
+        nav_home: "Home",
+        nav_about: "About",
+        nav_products: "Our Products",
+        nav_wholesale: "Wholesale",
+        nav_contact: "Contact",
+        eyebrow: "Wholesale Supply • Partnership Opportunities",
+        hero_title: "Reliable Lavash Supply Across the UAE",
+        hero_text: "Imperial Crown offers premium yeast-free Armenian lavash for restaurants, hotels, supermarkets, distributors and catering companies throughout the Emirates.",
+        hero_btn_1: "Request Wholesale Price",
+        hero_btn_2: "WhatsApp Us",
+        supply_title: "Who We Supply",
+        supply_subtitle: "We are open to long-term cooperation with food service and retail partners who value reliable supply, premium quality and authentic Armenian bakery tradition.",
+        supply_1_title: "Restaurants",
+        supply_1_text: "Consistent lavash supply for shawarma restaurants, Arabic cuisine, Armenian cuisine and premium dining concepts.",
+        supply_2_title: "Hotels",
+        supply_2_text: "Fresh premium bakery products for hotel kitchens, breakfast service, events and guest dining operations.",
+        supply_3_title: "Supermarkets",
+        supply_3_text: "Retail-ready bakery products with strong presentation and the potential for long-term shelf presence.",
+        benefits_title: "Why Work With Imperial Crown",
+        benefits_subtitle: "We combine authentic Armenian bakery heritage with premium quality standards and a modern production approach in the UAE.",
+        benefit_1_title: "Authentic Taste",
+        benefit_1_text: "Traditional Armenian lavash with a recipe focused on authenticity, texture and quality.",
+        benefit_2_title: "Reliable Production",
+        benefit_2_text: "Fresh production in Sharjah with consistent standards and dependable delivery across all Emirates.",
+        benefit_3_title: "Long-Term Partnership",
+        benefit_3_text: "Flexible cooperation for wholesalers, retailers and food service companies looking for stable supply.",
+        partner_title: "Partnership Opportunities",
+        partner_text: "Imperial Crown welcomes cooperation with restaurants, hotels, supermarkets, distributors and catering companies across the UAE. We offer reliable supply, premium product quality and long-term partnership opportunities.",
+        partner_btn: "Become Our Partner",
+        form_title: "Request Wholesale Price",
+        form_subtitle: "Send us your request and our team will contact you regarding pricing, supply terms and partnership opportunities.",
+        label_fullname: "Full Name",
+        label_company: "Company Name",
+        label_phone: "Phone / WhatsApp",
+        label_email: "Email",
+        label_city: "City / Emirate",
+        label_business: "Business Type",
+        option_select: "Select business type",
+        option_restaurant: "Restaurant",
+        option_hotel: "Hotel",
+        option_supermarket: "Supermarket",
+        option_distributor: "Distributor",
+        option_catering: "Catering Company",
+        option_other: "Other",
+        label_volume: "Estimated Order Volume",
+        label_message: "Message",
+        form_btn: "Send Request",
+        contact_title: "Contact Information",
+        contact_prod_label: "Production:",
+        contact_prod_value: "Sharjah, UAE",
+        contact_delivery_label: "Delivery:",
+        contact_delivery_value: "Across All Emirates",
+        footer_tagline: "Premium bakery brand inspired by Armenian tradition",
+        footer_line: "Production: Sharjah UAE • Delivery Across All Emirates"
+      },
+
+      ru: {
+        brand_sub: "Армянский лаваш",
+        nav_home: "Главная",
+        nav_about: "О нас",
+        nav_products: "Наша продукция",
+        nav_wholesale: "Опт",
+        nav_contact: "Контакты",
+        eyebrow: "Оптовые поставки • Партнёрские возможности",
+        hero_title: "Надёжные поставки лаваша по всему ОАЭ",
+        hero_text: "Imperial Crown предлагает премиальный бездрожжевой армянский лаваш для ресторанов, отелей, супермаркетов, дистрибьюторов и кейтеринговых компаний по всем Эмиратам.",
+        hero_btn_1: "Запросить оптовую цену",
+        hero_btn_2: "Написать в WhatsApp",
+        supply_title: "Кого мы снабжаем",
+        supply_subtitle: "Мы открыты к долгосрочному сотрудничеству с партнёрами из сферы питания и розничной торговли, которые ценят надёжные поставки, премиальное качество и подлинные армянские хлебопекарные традиции.",
+        supply_1_title: "Рестораны",
+        supply_1_text: "Стабильные поставки лаваша для шаурмичных, ресторанов арабской кухни, армянской кухни и премиальных гастрономических проектов.",
+        supply_2_title: "Отели",
+        supply_2_text: "Свежая премиальная выпечка для гостиничных кухонь, завтраков, мероприятий и обслуживания гостей.",
+        supply_3_title: "Супермаркеты",
+        supply_3_text: "Продукция, готовая к розничной продаже, с сильной подачей и потенциалом долгосрочного присутствия на полке.",
+        benefits_title: "Почему выгодно работать с Imperial Crown",
+        benefits_subtitle: "Мы объединяем подлинное армянское хлебопекарное наследие, премиальные стандарты качества и современный производственный подход в ОАЭ.",
+        benefit_1_title: "Подлинный вкус",
+        benefit_1_text: "Традиционный армянский лаваш с акцентом на подлинность, текстуру и качество.",
+        benefit_2_title: "Надёжное производство",
+        benefit_2_text: "Свежая продукция из Шарджи со стабильными стандартами и надёжной доставкой по всем Эмиратам.",
+        benefit_3_title: "Долгосрочное партнёрство",
+        benefit_3_text: "Гибкое сотрудничество для оптовиков, розничных сетей и компаний общественного питания, которым нужны стабильные поставки.",
+        partner_title: "Партнёрские возможности",
+        partner_text: "Imperial Crown открыт к сотрудничеству с ресторанами, отелями, супермаркетами, дистрибьюторами и кейтеринговыми компаниями по всему ОАЭ. Мы предлагаем надёжные поставки, премиальное качество продукции и долгосрочные партнёрские возможности.",
+        partner_btn: "Стать нашим партнёром",
+        form_title: "Запросить оптовую цену",
+        form_subtitle: "Отправьте нам запрос, и наша команда свяжется с вами по вопросам цен, условий поставки и возможностей сотрудничества.",
+        label_fullname: "Полное имя",
+        label_company: "Название компании",
+        label_phone: "Телефон / WhatsApp",
+        label_email: "Email",
+        label_city: "Город / Эмират",
+        label_business: "Тип бизнеса",
+        option_select: "Выберите тип бизнеса",
+        option_restaurant: "Ресторан",
+        option_hotel: "Отель",
+        option_supermarket: "Супермаркет",
+        option_distributor: "Дистрибьютор",
+        option_catering: "Кейтеринговая компания",
+        option_other: "Другое",
+        label_volume: "Предполагаемый объём заказа",
+        label_message: "Сообщение",
+        form_btn: "Отправить запрос",
+        contact_title: "Контактная информация",
+        contact_prod_label: "Производство:",
+        contact_prod_value: "Шарджа, ОАЭ",
+        contact_delivery_label: "Доставка:",
+        contact_delivery_value: "По всем Эмиратам",
+        footer_tagline: "Премиальный пекарский бренд, вдохновлённый армянской традицией",
+        footer_line: "Производство: Шарджа, ОАЭ • Доставка по всем Эмиратам"
+      },
+
+      hy: {
+        brand_sub: "Հայկական լավաշ",
+        nav_home: "Գլխավոր",
+        nav_about: "Մեր մասին",
+        nav_products: "Մեր արտադրանքը",
+        nav_wholesale: "Մեծածախ",
+        nav_contact: "Կապ",
+        eyebrow: "Մեծածախ մատակարարում • Գործընկերության հնարավորություններ",
+        hero_title: "Լավաշի հուսալի մատակարարում ամբողջ ԱՄԷ-ում",
+        hero_text: "Imperial Crown-ը առաջարկում է պրեմիում առանց խմորիչի հայկական լավաշ ռեստորանների, հյուրանոցների, սուպերմարկետների, դիստրիբյուտորների և քեյթրինգի ընկերությունների համար ամբողջ Էմիրություններով։",
+        hero_btn_1: "Ստանալ մեծածախ գին",
+        hero_btn_2: "Գրել WhatsApp-ով",
+        supply_title: "Ում ենք մատակարարում",
+        supply_subtitle: "Մենք բաց ենք երկարաժամկետ համագործակցության համար սննդի ոլորտի և մանրածախ առեւտրի այն գործընկերների հետ, ովքեր գնահատում են հուսալի մատակարարումը, պրեմիում որակը և հայկական հացաթխման իսկական ավանդույթը։",
+        supply_1_title: "Ռեստորաններ",
+        supply_1_text: "Լավաշի կայուն մատակարարում շաուրմայի կետերի, արաբական խոհանոցի, հայկական խոհանոցի և պրեմիում սննդի նախագծերի համար։",
+        supply_2_title: "Հյուրանոցներ",
+        supply_2_text: "Թարմ պրեմիում հացաբուլկեղեն հյուրանոցների խոհանոցների, նախաճաշերի, միջոցառումների և հյուրերի սպասարկման համար։",
+        supply_3_title: "Սուպերմարկետներ",
+        supply_3_text: "Մանրածախ վաճառքի համար պատրաստ արտադրանք՝ ուժեղ ներկայացմամբ և երկարաժամկետ ներկայության հնարավորությամբ դարակներում։",
+        benefits_title: "Ինչու աշխատել Imperial Crown-ի հետ",
+        benefits_subtitle: "Մենք համադրում ենք հայկական հացաթխման իսկական ժառանգությունը, պրեմիում որակի չափանիշները և ժամանակակից արտադրական մոտեցումը ԱՄԷ-ում։",
+        benefit_1_title: "Իսկական համ",
+        benefit_1_text: "Ավանդական հայկական լավաշ՝ կենտրոնացած իսկության, կառուցվածքի և որակի վրա։",
+        benefit_2_title: "Հուսալի արտադրություն",
+        benefit_2_text: "Թարմ արտադրություն Շարժայում՝ կայուն չափանիշներով և հուսալի առաքմամբ ամբողջ Էմիրություններով։",
+        benefit_3_title: "Երկարաժամկետ գործընկերություն",
+        benefit_3_text: "Ճկուն համագործակցություն մեծածախ վաճառողների, մանրածախ ցանցերի և սննդի ծառայության ընկերությունների համար, որոնց պետք է կայուն մատակարարում։",
+        partner_title: "Գործընկերության հնարավորություններ",
+        partner_text: "Imperial Crown-ը ողջունում է համագործակցությունը ռեստորանների, հյուրանոցների, սուպերմարկետների, դիստրիբյուտորների և քեյթրինգի ընկերությունների հետ ամբողջ ԱՄԷ-ում։ Մենք առաջարկում ենք հուսալի մատակարարում, պրեմիում որակի արտադրանք և երկարաժամկետ գործընկերության հնարավորություններ։",
+        partner_btn: "Դառնալ մեր գործընկերը",
+        form_title: "Ստանալ մեծածախ գին",
+        form_subtitle: "Ուղարկեք մեզ ձեր հարցումը, և մեր թիմը կկապվի ձեզ հետ գների, մատակարարման պայմանների և համագործակցության հնարավորությունների վերաբերյալ։",
+        label_fullname: "Ամբողջական անուն",
+        label_company: "Ընկերության անվանումը",
+        label_phone: "Հեռախոս / WhatsApp",
+        label_email: "Էլ. փոստ",
+        label_city: "Քաղաք / Էմիրություն",
+        label_business: "Բիզնեսի տեսակը",
+        option_select: "Ընտրեք բիզնեսի տեսակը",
+        option_restaurant: "Ռեստորան",
+        option_hotel: "Հյուրանոց",
+        option_supermarket: "Սուպերմարկետ",
+        option_distributor: "Դիստրիբյուտոր",
+        option_catering: "Քեյթրինգի ընկերություն",
+        option_other: "Այլ",
+        label_volume: "Սպասվող պատվերի ծավալ",
+        label_message: "Հաղորդագրություն",
+        form_btn: "Ուղարկել հարցում",
+        contact_title: "Կոնտակտային տվյալներ",
+        contact_prod_label: "Արտադրություն՝",
+        contact_prod_value: "Շարժա, ԱՄԷ",
+        contact_delivery_label: "Առաքում՝",
+        contact_delivery_value: "Բոլոր Էմիրություններով",
+        footer_tagline: "Պրեմիում հացատան բրենդ՝ ոգեշնչված հայկական ավանդույթով",
+        footer_line: "Արտադրություն՝ Շարժա, ԱՄԷ • Առաքում բոլոր Էմիրություններով"
+      },
+
+      ar: {
+        brand_sub: "لافاش أرمني",
+        nav_home: "الرئيسية",
+        nav_about: "من نحن",
+        nav_products: "منتجاتنا",
+        nav_wholesale: "الجملة",
+        nav_contact: "اتصل بنا",
+        eyebrow: "توريد الجملة • فرص الشراكة",
+        hero_title: "توريد موثوق للافاش في جميع أنحاء الإمارات",
+        hero_text: "تقدم Imperial Crown لافاش أرمني فاخر بدون خميرة للمطاعم والفنادق والسوبرماركت والموزعين وشركات التموين في جميع أنحاء الإمارات.",
+        hero_btn_1: "طلب سعر الجملة",
+        hero_btn_2: "راسلنا على واتساب",
+        supply_title: "من نقوم بتوريده",
+        supply_subtitle: "نحن منفتحون على التعاون طويل الأمد مع شركاء قطاع الأغذية والتجزئة الذين يقدّرون التوريد الموثوق والجودة الفاخرة وتقاليد الخَبز الأرمنية الأصيلة.",
+        supply_1_title: "المطاعم",
+        supply_1_text: "توريد ثابت للافاش لمطاعم الشاورما والمأكولات العربية والمأكولات الأرمنية ومفاهيم الطعام الفاخر.",
+        supply_2_title: "الفنادق",
+        supply_2_text: "مخبوزات طازجة وفاخرة لمطابخ الفنادق وخدمة الإفطار والفعاليات وعمليات ضيافة النزلاء.",
+        supply_3_title: "السوبرماركت",
+        supply_3_text: "منتجات مخبوزات جاهزة للبيع بالتجزئة بعرض قوي وإمكانية حضور طويل الأمد على الأرفف.",
+        benefits_title: "لماذا العمل مع Imperial Crown",
+        benefits_subtitle: "نحن نجمع بين التراث الأرمني الأصيل في الخَبز ومعايير الجودة الفاخرة ونهج الإنتاج الحديث في الإمارات.",
+        benefit_1_title: "طعم أصيل",
+        benefit_1_text: "لافاش أرمني تقليدي بوصفة تركز على الأصالة والقوام والجودة.",
+        benefit_2_title: "إنتاج موثوق",
+        benefit_2_text: "إنتاج طازج في الشارقة بمعايير ثابتة وتوصيل موثوق إلى جميع الإمارات.",
+        benefit_3_title: "شراكة طويلة الأمد",
+        benefit_3_text: "تعاون مرن لتجار الجملة وتجار التجزئة وشركات خدمات الطعام الباحثة عن توريد ثابت.",
+        partner_title: "فرص الشراكة",
+        partner_text: "ترحب Imperial Crown بالتعاون مع المطاعم والفنادق والسوبرماركت والموزعين وشركات التموين في جميع أنحاء الإمارات. نحن نقدم توريداً موثوقاً وجودة فاخرة وفرص شراكة طويلة الأمد.",
+        partner_btn: "كن شريكنا",
+        form_title: "طلب سعر الجملة",
+        form_subtitle: "أرسل لنا طلبك وسيتواصل معك فريقنا بخصوص الأسعار وشروط التوريد وفرص الشراكة.",
+        label_fullname: "الاسم الكامل",
+        label_company: "اسم الشركة",
+        label_phone: "الهاتف / واتساب",
+        label_email: "البريد الإلكتروني",
+        label_city: "المدينة / الإمارة",
+        label_business: "نوع النشاط",
+        option_select: "اختر نوع النشاط",
+        option_restaurant: "مطعم",
+        option_hotel: "فندق",
+        option_supermarket: "سوبرماركت",
+        option_distributor: "موزع",
+        option_catering: "شركة تموين",
+        option_other: "أخرى",
+        label_volume: "حجم الطلب المتوقع",
+        label_message: "الرسالة",
+        form_btn: "إرسال الطلب",
+        contact_title: "معلومات الاتصال",
+        contact_prod_label: "الإنتاج:",
+        contact_prod_value: "الشارقة، الإمارات",
+        contact_delivery_label: "التوصيل:",
+        contact_delivery_value: "إلى جميع الإمارات",
+        footer_tagline: "علامة مخابز فاخرة مستوحاة من التقاليد الأرمنية",
+        footer_line: "الإنتاج: الشارقة، الإمارات • التوصيل إلى جميع الإمارات"
+      }
+    };
+
+    function applyLang(lang) {
+      const dict = translations[lang] || translations.en;
+
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) {
+          el.textContent = dict[key];
+        }
+      });
+
+      document.querySelectorAll('.language-switcher button').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+
+      const placeholders = {
+        en: {
+          fullname: "Your full name",
+          company: "Your company name",
+          phone: "+971...",
+          email: "your@email.com",
+          city: "Dubai, Sharjah, Abu Dhabi...",
+          volume: "Example: weekly / monthly quantity",
+          message: "Tell us about your request"
+        },
+        ru: {
+          fullname: "Ваше полное имя",
+          company: "Название вашей компании",
+          phone: "+971...",
+          email: "your@email.com",
+          city: "Дубай, Шарджа, Абу-Даби...",
+          volume: "Например: объём в неделю / месяц",
+          message: "Расскажите о вашем запросе"
+        },
+        hy: {
+          fullname: "Ձեր ամբողջական անունը",
+          company: "Ձեր ընկերության անվանումը",
+          phone: "+971...",
+          email: "your@email.com",
+          city: "Դուբայ, Շարժա, Աբու Դաբի...",
+          volume: "Օրինակ՝ շաբաթական / ամսական քանակ",
+          message: "Նկարագրեք ձեր հարցումը"
+        },
+        ar: {
+          fullname: "اسمك الكامل",
+          company: "اسم شركتك",
+          phone: "+971...",
+          email: "your@email.com",
+          city: "دبي، الشارقة، أبوظبي...",
+          volume: "مثال: الكمية الأسبوعية / الشهرية",
+          message: "أخبرنا بطلبك"
+        }
+      };
+
+      const ph = placeholders[lang] || placeholders.en;
+      document.getElementById('fullname').placeholder = ph.fullname;
+      document.getElementById('company').placeholder = ph.company;
+      document.getElementById('phone').placeholder = ph.phone;
+      document.getElementById('email').placeholder = ph.email;
+      document.getElementById('city').placeholder = ph.city;
+      document.getElementById('volume').placeholder = ph.volume;
+      document.getElementById('message').placeholder = ph.message;
+
+      localStorage.setItem('siteLang', lang);
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const savedLang = localStorage.getItem('siteLang') || 'en';
+      applyLang(savedLang);
+
+      document.querySelectorAll('.language-switcher button').forEach(btn => {
+        btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+      });
+    });
+  </script>
 
 </body>
 </html>

@@ -8,128 +8,293 @@
 <title>Our Products | Imperial Crown Armenian Lavash</title>
 
 <style>
-
 body{
-margin:0;
-font-family:Arial;
-background:#f7f2e8;
-color:#2f241c;
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f7f2e8;
+  color:#2f241c;
 }
 
 a{
-text-decoration:none;
+  text-decoration:none;
 }
 
 header{
-background:white;
-border-bottom:1px solid #e8dcc8;
+  background:white;
+  border-bottom:1px solid #e8dcc8;
 }
 
 .topbar{
-max-width:1200px;
-margin:auto;
-padding:20px;
-display:flex;
-justify-content:space-between;
-align-items:center;
+  max-width:1200px;
+  margin:auto;
+  padding:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
 }
 
 .brand{
-display:flex;
-align-items:center;
-gap:15px;
+  display:flex;
+  align-items:center;
+  gap:15px;
 }
 
 .brand img{
-width:70px;
-border-radius:50%;
+  width:70px;
+  border-radius:50%;
 }
 
-.brand h2{
-margin:0;
-color:#5a381c;
+.brand-text h2{
+  margin:0;
+  color:#5a381c;
+}
+
+.brand-text p{
+  margin:4px 0 0;
+  color:#9a7848;
+  font-size:14px;
+}
+
+.header-right{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+nav{
+  display:flex;
+  flex-wrap:wrap;
 }
 
 nav a{
-margin-left:20px;
-color:#3f2d1c;
-font-weight:bold;
+  margin-left:20px;
+  color:#3f2d1c;
+  font-weight:bold;
 }
 
-.language{
-margin-left:20px;
+.language-switcher{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  background:#fff7ec;
+  border:1px solid #ead9bc;
+  border-radius:999px;
+  padding:6px;
+  flex-wrap:wrap;
+}
+
+.language-switcher button{
+  border:none;
+  background:transparent;
+  padding:8px 12px;
+  border-radius:999px;
+  font-size:13px;
+  font-weight:700;
+  color:#5a381c;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  white-space:nowrap;
+}
+
+.language-switcher button.active{
+  background:#c79b52;
+  color:#fff;
+}
+
+.flag{
+  font-size:16px;
+  line-height:1;
 }
 
 .hero{
-text-align:center;
-padding:80px 20px;
-background:url('lavash.jpg') center/cover no-repeat;
-color:#3b2a1c;
+  text-align:center;
+  padding:80px 20px;
+  background:linear-gradient(rgba(247,242,232,.82), rgba(247,242,232,.88)), url('lavash.jpg') center/cover no-repeat;
+  color:#3b2a1c;
 }
 
 .hero h1{
-font-size:46px;
+  font-size:46px;
+  margin:0 0 14px;
+}
+
+.hero p{
+  margin:0;
+  font-size:20px;
+  color:#4f3d30;
 }
 
 .section{
-max-width:1100px;
-margin:auto;
-padding:80px 20px;
+  max-width:1100px;
+  margin:auto;
+  padding:80px 20px;
+}
+
+.section h2{
+  color:#5a381c;
+  margin-top:0;
+}
+
+.section p{
+  font-size:18px;
+  line-height:1.7;
+  color:#4f3d30;
 }
 
 .products{
-display:grid;
-grid-template-columns:1fr 1fr 1fr;
-gap:25px;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:25px;
 }
 
 .card{
-background:white;
-padding:30px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
+  background:white;
+  padding:30px;
+  border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
 .card h3{
-color:#5a381c;
+  color:#5a381c;
+  margin-top:0;
+}
+
+.card p{
+  font-size:17px;
+  line-height:1.7;
+  color:#4f3d30;
 }
 
 .button{
-background:#c79b52;
-padding:14px 25px;
-color:white;
-border-radius:6px;
-display:inline-block;
-margin-top:15px;
+  background:#c79b52;
+  padding:14px 25px;
+  color:white;
+  border-radius:6px;
+  display:inline-block;
+  margin-top:15px;
+  font-weight:bold;
 }
 
 footer{
-background:#4a2d16;
-color:white;
-text-align:center;
-padding:30px;
+  background:#4a2d16;
+  color:white;
+  text-align:center;
+  padding:30px;
 }
 
 .social a{
-margin:10px;
-color:white;
+  margin:10px;
+  color:white;
 }
 
 .whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-width:60px;
-height:60px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-color:white;
-font-size:26px;
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-size:26px;
+  z-index:9999;
 }
 
+html[dir="rtl"] body{
+  direction:rtl;
+  text-align:right;
+}
+
+html[dir="rtl"] .topbar{
+  direction:rtl;
+}
+
+html[dir="rtl"] .brand{
+  flex-direction:row-reverse;
+}
+
+html[dir="rtl"] .header-right{
+  justify-content:flex-start;
+}
+
+html[dir="rtl"] nav{
+  flex-direction:row-reverse;
+}
+
+html[dir="rtl"] nav a{
+  margin-left:0;
+  margin-right:20px;
+}
+
+html[dir="rtl"] .hero,
+html[dir="rtl"] footer,
+html[dir="rtl"] .section[style]{
+  text-align:center !important;
+}
+
+@media (max-width:900px){
+  .topbar{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .header-right{
+    width:100%;
+    align-items:flex-start;
+    justify-content:flex-start;
+    flex-direction:column;
+  }
+
+  .products{
+    grid-template-columns:1fr;
+  }
+
+  nav a{
+    margin-left:0;
+    margin-right:18px;
+    margin-bottom:10px;
+  }
+
+  html[dir="rtl"] nav a{
+    margin-right:0;
+    margin-left:18px;
+  }
+}
+
+@media (max-width:640px){
+  .hero h1{
+    font-size:36px;
+  }
+
+  .hero p{
+    font-size:18px;
+  }
+
+  .language-switcher{
+    width:100%;
+  }
+
+  .language-switcher button{
+    font-size:12px;
+    padding:8px 10px;
+  }
+
+  .whatsapp{
+    width:56px;
+    height:56px;
+    right:16px;
+    bottom:16px;
+  }
+}
 </style>
 
 </head>
@@ -137,143 +302,236 @@ font-size:26px;
 <body>
 
 <header>
+  <div class="topbar">
+    <div class="brand">
+      <img src="logo.png" alt="Imperial Crown logo">
+      <div class="brand-text">
+        <h2>Imperial Crown</h2>
+        <p data-i18n="brand_sub">Armenian Lavash</p>
+      </div>
+    </div>
 
-<div class="topbar">
+    <div class="header-right">
+      <nav>
+        <a href="index.html" data-i18n="nav_home">Home</a>
+        <a href="about.html" data-i18n="nav_about">About</a>
+        <a href="products.html" data-i18n="nav_products">Products</a>
+        <a href="wholesale.html" data-i18n="nav_wholesale">Wholesale</a>
+        <a href="contact.html" data-i18n="nav_contact">Contact</a>
+      </nav>
 
-<div class="brand">
-
-<img src="logo.png">
-
-<h2>Imperial Crown</h2>
-
-</div>
-
-<nav>
-
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="products.html">Products</a>
-<a href="wholesale.html">Wholesale</a>
-<a href="contact.html">Contact</a>
-
-</nav>
-
-</div>
-
+      <div class="language-switcher">
+        <button type="button" data-lang="en" class="active">
+          <span class="flag">🇬🇧</span><span>English</span>
+        </button>
+        <button type="button" data-lang="ru">
+          <span class="flag">🇷🇺</span><span>Русский</span>
+        </button>
+        <button type="button" data-lang="hy">
+          <span class="flag">🇦🇲</span><span>Հայերեն</span>
+        </button>
+        <button type="button" data-lang="ar">
+          <span class="flag">🇦🇪</span><span>العربية</span>
+        </button>
+      </div>
+    </div>
+  </div>
 </header>
 
 <div class="hero">
-
-<h1>Our Products</h1>
-
-<p>Premium Armenian Bakery Products</p>
-
+  <h1 data-i18n="hero_title">Our Products</h1>
+  <p data-i18n="hero_subtitle">Premium Armenian Bakery Products</p>
 </div>
 
 <div class="section">
+  <h2 data-i18n="intro_title">Imperial Crown Bakery Collection</h2>
+  <p data-i18n="intro_text">
+    Imperial Crown specializes in traditional Armenian bakery products made with
+    premium ingredients and authentic recipes.
 
-<h2>Imperial Crown Bakery Collection</h2>
-
-<p>
-
-Imperial Crown specializes in traditional Armenian bakery products made with
-premium ingredients and authentic recipes.
-
-Our main product is Armenian lavash, produced using high quality flour and
-traditional methods.
-
-</p>
-
+    Our main product is Armenian lavash, produced using high quality flour and
+    traditional methods.
+  </p>
 </div>
 
 <div class="section">
+  <div class="products">
+    <div class="card">
+      <h3 data-i18n="product_1_title">Armenian Lavash</h3>
+      <p data-i18n="product_1_text">
+        Traditional Armenian thin bread made without yeast.
+        Perfect for wraps, shawarma, sandwiches and traditional cuisine.
+      </p>
+    </div>
 
-<div class="products">
+    <div class="card">
+      <h3 data-i18n="product_2_title">Premium Lavash</h3>
+      <p data-i18n="product_2_text">
+        Special selection lavash produced using the highest quality Armenian flour
+        and pure ingredients.
+      </p>
+    </div>
 
-<div class="card">
-
-<h3>Armenian Lavash</h3>
-
-<p>
-
-Traditional Armenian thin bread made without yeast.
-Perfect for wraps, shawarma, sandwiches and traditional cuisine.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Premium Lavash</h3>
-
-<p>
-
-Special selection lavash produced using the highest quality Armenian flour
-and pure ingredients.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Future Bakery Products</h3>
-
-<p>
-
-Soon Imperial Crown will introduce new bakery products including
-traditional Armenian breads and specialty bakery items.
-
-</p>
-
-</div>
-
-</div>
-
+    <div class="card">
+      <h3 data-i18n="product_3_title">Future Bakery Products</h3>
+      <p data-i18n="product_3_text">
+        Soon Imperial Crown will introduce new bakery products including
+        traditional Armenian breads and specialty bakery items.
+      </p>
+    </div>
+  </div>
 </div>
 
 <div class="section" style="text-align:center">
+  <h2 data-i18n="wholesale_title">Wholesale Supply</h2>
+  <p data-i18n="wholesale_text">
+    We supply restaurants, supermarkets, catering companies and distributors
+    across the United Arab Emirates.
+  </p>
 
-<h2>Wholesale Supply</h2>
-
-<p>
-
-We supply restaurants, supermarkets, catering companies and distributors
-across the United Arab Emirates.
-
-</p>
-
-<a class="button" href="wholesale.html">
-
-Request Wholesale Price
-
-</a>
-
+  <a class="button" href="wholesale.html" data-i18n="wholesale_btn">
+    Request Wholesale Price
+  </a>
 </div>
 
 <footer>
+  <p><strong>Imperial Crown Armenian Lavash</strong></p>
+  <p data-i18n="footer_line_1">Production: Sharjah UAE</p>
+  <p>Email: info@imperial-crown.com</p>
 
-<p>Imperial Crown Armenian Lavash</p>
-
-<p>Production: Sharjah UAE</p>
-
-<p>Email: info@imperial-crown.com</p>
-
-<div class="social">
-
-<a href="https://www.instagram.com/armenyan_lavash?igsh=NW1lZHNvb214OXdw">Instagram</a>
-
-</div>
-
+  <div class="social">
+    <a href="https://www.instagram.com/armenyan_lavash?igsh=NW1lZHNvb214OXdw" target="_blank">Instagram</a>
+  </div>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/971588588313">
-
-☎
-
+<a class="whatsapp" href="https://wa.me/971588588313" target="_blank" aria-label="Chat on WhatsApp">
+  ☎
 </a>
 
-</body>
+<script>
+const translations = {
+  en: {
+    brand_sub: "Armenian Lavash",
+    nav_home: "Home",
+    nav_about: "About",
+    nav_products: "Products",
+    nav_wholesale: "Wholesale",
+    nav_contact: "Contact",
+    hero_title: "Our Products",
+    hero_subtitle: "Premium Armenian Bakery Products",
+    intro_title: "Imperial Crown Bakery Collection",
+    intro_text: "Imperial Crown specializes in traditional Armenian bakery products made with premium ingredients and authentic recipes. Our main product is Armenian lavash, produced using high quality flour and traditional methods.",
+    product_1_title: "Armenian Lavash",
+    product_1_text: "Traditional Armenian thin bread made without yeast. Perfect for wraps, shawarma, sandwiches and traditional cuisine.",
+    product_2_title: "Premium Lavash",
+    product_2_text: "Special selection lavash produced using the highest quality Armenian flour and pure ingredients.",
+    product_3_title: "Future Bakery Products",
+    product_3_text: "Soon Imperial Crown will introduce new bakery products including traditional Armenian breads and specialty bakery items.",
+    wholesale_title: "Wholesale Supply",
+    wholesale_text: "We supply restaurants, supermarkets, catering companies and distributors across the United Arab Emirates.",
+    wholesale_btn: "Request Wholesale Price",
+    footer_line_1: "Production: Sharjah UAE"
+  },
 
+  ru: {
+    brand_sub: "Армянский лаваш",
+    nav_home: "Главная",
+    nav_about: "О нас",
+    nav_products: "Продукция",
+    nav_wholesale: "Опт",
+    nav_contact: "Контакты",
+    hero_title: "Наша продукция",
+    hero_subtitle: "Премиальные армянские хлебобулочные изделия",
+    intro_title: "Коллекция выпечки Imperial Crown",
+    intro_text: "Imperial Crown специализируется на традиционных армянских хлебобулочных изделиях, изготовленных из премиальных ингредиентов по аутентичным рецептам. Наш основной продукт — армянский лаваш, который производится из высококачественной муки традиционным способом.",
+    product_1_title: "Армянский лаваш",
+    product_1_text: "Традиционный тонкий армянский хлеб без дрожжей. Идеально подходит для роллов, шаурмы, сэндвичей и традиционной кухни.",
+    product_2_title: "Премиальный лаваш",
+    product_2_text: "Особая линейка лаваша, произведённая из высококачественной армянской муки и чистых ингредиентов.",
+    product_3_title: "Будущая продукция",
+    product_3_text: "Скоро Imperial Crown представит новые хлебобулочные изделия, включая традиционный армянский хлеб и фирменную выпечку.",
+    wholesale_title: "Оптовые поставки",
+    wholesale_text: "Мы поставляем продукцию ресторанам, супермаркетам, кейтеринговым компаниям и дистрибьюторам по всему ОАЭ.",
+    wholesale_btn: "Запросить оптовую цену",
+    footer_line_1: "Производство: Шарджа, ОАЭ"
+  },
+
+  hy: {
+    brand_sub: "Հայկական լավաշ",
+    nav_home: "Գլխավոր",
+    nav_about: "Մեր մասին",
+    nav_products: "Արտադրանք",
+    nav_wholesale: "Մեծածախ",
+    nav_contact: "Կապ",
+    hero_title: "Մեր արտադրանքը",
+    hero_subtitle: "Պրեմիում հայկական հացաբուլկեղեն",
+    intro_title: "Imperial Crown հացատան հավաքածու",
+    intro_text: "Imperial Crown-ը մասնագիտանում է հայկական ավանդական հացաբուլկեղենի մեջ, որը պատրաստվում է պրեմիում բաղադրիչներով և իսկական բաղադրատոմսերով։ Մեր հիմնական արտադրանքը հայկական լավաշն է, որը պատրաստվում է բարձրորակ ալյուրից՝ ավանդական եղանակով։",
+    product_1_title: "Հայկական լավաշ",
+    product_1_text: "Ավանդական բարակ հայկական հաց առանց խմորիչի։ Հիանալի է ռոլլերի, շաուրմայի, սենդվիչների և ավանդական ուտեստների համար։",
+    product_2_title: "Պրեմիում լավաշ",
+    product_2_text: "Լավաշի հատուկ ընտրանի՝ պատրաստված բարձրորակ հայկական ալյուրով և մաքուր բաղադրիչներով։",
+    product_3_title: "Ապագա արտադրանք",
+    product_3_text: "Շուտով Imperial Crown-ը կներկայացնի նոր հացաբուլկեղեն, ներառյալ ավանդական հայկական հացեր և յուրահատուկ թխվածքներ։",
+    wholesale_title: "Մեծածախ մատակարարում",
+    wholesale_text: "Մենք մատակարարում ենք ռեստորաններին, սուպերմարկետներին, քեյթրինգի ընկերություններին և դիստրիբյուտորներին ամբողջ ԱՄԷ-ում։",
+    wholesale_btn: "Ստանալ մեծածախ գին",
+    footer_line_1: "Արտադրություն՝ Շարժա, ԱՄԷ"
+  },
+
+  ar: {
+    brand_sub: "لافاش أرمني",
+    nav_home: "الرئيسية",
+    nav_about: "من نحن",
+    nav_products: "المنتجات",
+    nav_wholesale: "الجملة",
+    nav_contact: "اتصل بنا",
+    hero_title: "منتجاتنا",
+    hero_subtitle: "منتجات مخابز أرمنية فاخرة",
+    intro_title: "مجموعة مخبوزات Imperial Crown",
+    intro_text: "تتخصص Imperial Crown في منتجات المخابز الأرمنية التقليدية المصنوعة من مكونات فاخرة ووصفات أصلية. منتجنا الرئيسي هو اللافاش الأرمني الذي يتم إنتاجه باستخدام دقيق عالي الجودة وطرق تقليدية.",
+    product_1_title: "اللافاش الأرمني",
+    product_1_text: "خبز أرمني رقيق تقليدي بدون خميرة. مثالي للفائف والشاورما والسندويشات والمأكولات التقليدية.",
+    product_2_title: "لافاش فاخر",
+    product_2_text: "تشكيلة خاصة من اللافاش يتم إنتاجها باستخدام أجود أنواع الدقيق الأرمني والمكونات النقية.",
+    product_3_title: "منتجات مستقبلية",
+    product_3_text: "قريباً ستقدم Imperial Crown منتجات مخابز جديدة تشمل الخبز الأرمني التقليدي وأصنافاً مميزة من المخبوزات.",
+    wholesale_title: "توريد الجملة",
+    wholesale_text: "نقوم بالتوريد إلى المطاعم والسوبرماركت وشركات التموين والموزعين في جميع أنحاء الإمارات العربية المتحدة.",
+    wholesale_btn: "طلب سعر الجملة",
+    footer_line_1: "الإنتاج: الشارقة، الإمارات"
+  }
+};
+
+function applyLang(lang) {
+  const dict = translations[lang] || translations.en;
+
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dict[key]) {
+      el.textContent = dict[key];
+    }
+  });
+
+  document.querySelectorAll('.language-switcher button').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+
+  localStorage.setItem('siteLang', lang);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  const savedLang = localStorage.getItem('siteLang') || 'en';
+  applyLang(savedLang);
+
+  document.querySelectorAll('.language-switcher button').forEach(btn => {
+    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+  });
+});
+</script>
+
+</body>
 </html>

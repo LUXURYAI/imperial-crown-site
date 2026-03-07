@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wholesale | Imperial Crown Armenian Lavash</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#f7f2e8;
+color:#2f241c;
+}
+
+header{
+background:white;
+border-bottom:1px solid #e8dcc8;
+}
+
+.topbar{
+max-width:1200px;
+margin:auto;
+padding:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.brand img{
+width:70px;
+}
+
+.brand h1{
+margin:0;
+font-size:20px;
+color:#5a381c;
+}
+
+nav a{
+margin-left:25px;
+text-decoration:none;
+color:#3f2d1c;
+font-weight:bold;
+}
+
+.hero{
+background:#efe2cb;
+padding:80px 20px;
+text-align:center;
+}
+
+.hero h2{
+font-size:44px;
+margin-bottom:10px;
+color:#5a381c;
+}
+
+.hero p{
+font-size:20px;
+max-width:700px;
+margin:auto;
+}
+
+.button{
+background:#c79b52;
+color:white;
+padding:16px 28px;
+border-radius:8px;
+display:inline-block;
+margin-top:25px;
+font-weight:bold;
+}
+
+.section{
+max-width:1100px;
+margin:auto;
+padding:80px 20px;
+}
+
+.section h2{
+text-align:center;
+font-size:36px;
+margin-bottom:20px;
+color:#5a381c;
+}
+
+.cards{
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+gap:25px;
+margin-top:40px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 0 15px rgba(0,0,0,0.08);
+}
+
+.card h3{
+margin-top:0;
+color:#5a381c;
+}
+
+.form-box{
+background:white;
+padding:40px;
+border-radius:10px;
+box-shadow:0 0 15px rgba(0,0,0,0.08);
+max-width:700px;
+margin:auto;
+}
+
+.form-box input,
+.form-box textarea{
+width:100%;
+padding:14px;
+margin-bottom:15px;
+border:1px solid #ddd;
+border-radius:6px;
+}
+
+footer{
+background:#4a2d16;
+color:white;
+text-align:center;
+padding:30px;
+margin-top:60px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="topbar">
+
+<div class="brand">
+<img src="logo.png">
+<h1>Imperial Crown</h1>
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="wholesale.html">Wholesale</a>
+</nav>
+
+</div>
+
+</header>
+
+<div class="hero">
+
+<h2>Wholesale Armenian Lavash Supply</h2>
+
+<p>
+Imperial Crown supplies premium Armenian lavash across the UAE.
+We work with restaurants, hotels, supermarkets and distributors.
+</p>
+
+<a class="button" href="https://wa.me/971588588313">Request Wholesale Price</a>
+
+</div>
+
+<div class="section">
+
+<h2>Who We Supply</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Restaurants</h3>
+<p>Reliable supply of fresh lavash for shawarma restaurants and Armenian cuisine kitchens.</p>
+</div>
+
+<div class="card">
+<h3>Hotels</h3>
+<p>Premium bakery products for hotel kitchens and guest dining services.</p>
+</div>
+
+<div class="card">
+<h3>Supermarkets</h3>
+<p>Retail-ready lavash for supermarkets and specialty food stores.</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>Request Wholesale Price</h2>
+
+<div class="form-box">
+
+<form name="wholesale" method="POST" data-netlify="true">
+
+<input type="hidden" name="form-name" value="wholesale">
+
+<input type="text" name="name" placeholder="Full Name" required>
+
+<input type="text" name="company" placeholder="Company Name">
+
+<input type="text" name="phone" placeholder="Phone / WhatsApp" required>
+
+<input type="email" name="email" placeholder="Email" required>
+
+<textarea name="message" placeholder="Your request"></textarea>
+
+<button class="button" type="submit">Send Request</button>
+
+</form>
+
+</div>
+
+</div>
+
+<footer>
+
+<p>Imperial Crown Armenian Lavash</p>
+<p>Production: Sharjah UAE</p>
+<p>WhatsApp: +971 58 858 8313</p>
+
+</footer>
+
+</body>
+</html>
